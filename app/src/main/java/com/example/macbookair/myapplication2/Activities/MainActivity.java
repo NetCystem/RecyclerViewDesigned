@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private RecyclerView recyclerView;
     private ImageButton addButton;
-    private static RecyclerViewAdapter adapter;
+    private RecyclerViewAdapter adapter;
     private PersonDatabase db;
     private List<Person> people;
 
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("Contacts");
         toolbar.setTitleTextAppearance(this, R.style.toolbarStyle);
-        toolbar.setTitleMarginStart(270);
+        toolbar.setTitleMarginStart(250);
         toolbar.setTitleTextColor(Color.WHITE);
         setSupportActionBar(toolbar);
 
