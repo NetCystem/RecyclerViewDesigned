@@ -1,4 +1,4 @@
-package com.example.macbookair.myapplication2.Adapters;
+package com.example.macbookair.myapplication2.adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,11 +12,11 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.example.macbookair.myapplication2.Activities.DetailsActivity;
-import com.example.macbookair.myapplication2.Constants.ExtraConstants;
-import com.example.macbookair.myapplication2.Models.Person;
 import com.example.macbookair.myapplication2.R;
-import com.example.macbookair.myapplication2.Constants.SocialNetworks;
+import com.example.macbookair.myapplication2.activities.DetailsActivity;
+import com.example.macbookair.myapplication2.constants.ExtraConstants;
+import com.example.macbookair.myapplication2.constants.SocialNetworks;
+import com.example.macbookair.myapplication2.models.Person;
 
 import java.util.List;
 
@@ -27,13 +27,17 @@ import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
-    private Context mContext;
-    private static List<Person> personList;
     public static int INDEX = 0;
+    private static List<Person> personList;
+    private Context mContext;
 
     public RecyclerViewAdapter(Context mContext, List<Person> personList) {
         this.mContext = mContext;
         RecyclerViewAdapter.personList = personList;
+    }
+
+    public static List<Person> getPersonList() {
+        return personList;
     }
 
     @Override
@@ -58,7 +62,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         else {
         }
 
-
         holder.recyclerViewLayout.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -76,17 +79,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         });
     }
 
-    public static List<Person> getPersonList() {
-        return personList;
-    }
-
     @Override
     public int getItemCount() {
         return personList.size() > 0 ? personList.size() : 0;
     }
 
 
-    class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
 
         private ImageView profileImage;
         private TextView txtName;
@@ -101,6 +100,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             txtCategory = itemView.findViewById(R.id.txt_category);
             networkImage = itemView.findViewById(R.id.network_image);
             recyclerViewLayout = itemView.findViewById(R.id.recycler_view_layout);
+        }
+
+        public ViewHolder getHolder() {
+            return this;
         }
     }
 }

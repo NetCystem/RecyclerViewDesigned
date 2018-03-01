@@ -1,20 +1,17 @@
-package com.example.macbookair.myapplication2.Activities;
+package com.example.macbookair.myapplication2.activities;
 
 import android.arch.persistence.room.Room;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.macbookair.myapplication2.Adapters.RecyclerViewAdapter;
-import com.example.macbookair.myapplication2.Databse.PersonDatabase;
-import com.example.macbookair.myapplication2.Models.Person;
 import com.example.macbookair.myapplication2.R;
+import com.example.macbookair.myapplication2.adapters.RecyclerViewAdapter;
+import com.example.macbookair.myapplication2.database.PersonDatabase;
+import com.example.macbookair.myapplication2.models.Person;
 
 public class EditPersonActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -42,7 +39,6 @@ public class EditPersonActivity extends AppCompatActivity implements View.OnClic
         PersonDatabase db = Room.databaseBuilder(getApplicationContext(), PersonDatabase.class, "production")
                 .allowMainThreadQueries()
                 .build();
-
         Person person = RecyclerViewAdapter.getPersonList().get(RecyclerViewAdapter.INDEX);
         person.setName(fullNameEdit.getText().toString());
         person.setCountry(countryEdit.getText().toString());

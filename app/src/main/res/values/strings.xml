@@ -11,4 +11,5 @@
     <string name="last_seen">Last Seen:</string>
     <string name="social_network">Social Network:</string>
     <string name="save">Save</string>
+    <string name="select_image">Select Image</string>
 </resources>

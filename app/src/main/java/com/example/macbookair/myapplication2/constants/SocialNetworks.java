@@ -1,4 +1,4 @@
-package com.example.macbookair.myapplication2.Constants;
+package com.example.macbookair.myapplication2.constants;
 
 /**
  * Created by macbookair on 1/20/18.

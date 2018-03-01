@@ -1,9 +1,9 @@
-package com.example.macbookair.myapplication2.Databse;
+package com.example.macbookair.myapplication2.database;
 
 import android.arch.persistence.room.Database;
 import android.arch.persistence.room.RoomDatabase;
 
-import com.example.macbookair.myapplication2.Models.Person;
+import com.example.macbookair.myapplication2.models.Person;
 
 /**
  * Created by macbookair on 2/3/18.
@@ -13,5 +13,6 @@ import com.example.macbookair.myapplication2.Models.Person;
 public abstract class PersonDatabase extends RoomDatabase {
 
     public abstract PersonDao personDao();
+
 
 }

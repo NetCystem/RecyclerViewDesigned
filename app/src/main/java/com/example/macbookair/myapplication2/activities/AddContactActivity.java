@@ -1,16 +1,16 @@
-package com.example.macbookair.myapplication2.Activities;
+package com.example.macbookair.myapplication2.activities;
 
 import android.arch.persistence.room.Room;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.macbookair.myapplication2.Models.Person;
-import com.example.macbookair.myapplication2.Databse.PersonDatabase;
 import com.example.macbookair.myapplication2.R;
+import com.example.macbookair.myapplication2.database.PersonDatabase;
+import com.example.macbookair.myapplication2.models.Person;
 
 public class AddContactActivity extends AppCompatActivity {
 
@@ -31,7 +31,6 @@ public class AddContactActivity extends AppCompatActivity {
         txtEmail = findViewById(R.id.email_add);
         txtSocial = findViewById(R.id.social_network_add);
 
-
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,4 +47,5 @@ public class AddContactActivity extends AppCompatActivity {
             }
         });
     }
+
 }

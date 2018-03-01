@@ -1,22 +1,21 @@
-package com.example.macbookair.myapplication2.Activities;
+package com.example.macbookair.myapplication2.activities;
 
 import android.arch.persistence.room.Room;
 import android.content.Intent;
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.Toast;
 
-import com.example.macbookair.myapplication2.Models.Person;
-import com.example.macbookair.myapplication2.Databse.PersonDatabase;
 import com.example.macbookair.myapplication2.R;
-import com.example.macbookair.myapplication2.Adapters.RecyclerViewAdapter;
+import com.example.macbookair.myapplication2.adapters.RecyclerViewAdapter;
+import com.example.macbookair.myapplication2.database.PersonDatabase;
+import com.example.macbookair.myapplication2.models.Person;
 
 import java.util.List;
 
@@ -33,8 +32,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        Toast.makeText(this, "onCreate", Toast.LENGTH_SHORT).show();
 
         addButton = findViewById(R.id.addButton);
         toolbar = findViewById(R.id.toolbar);
